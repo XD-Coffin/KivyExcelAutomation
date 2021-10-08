@@ -1,0 +1,574 @@
+#: import Factory kivy.factory.Factory
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+<PopMe@Popup>:
+    size_hint: (0.5,0.5)
+    title: "Developer's Information !!"
+    FloatLayout:
+        Image:
+            source: "pop.jpg"
+            pos_hint: {"center_x":0.5,"center_y":0.5}
+        Label:
+            markup: True
+            text: "[b][i]Please do report any problems you have\n regarding the software.\n\n\n\n\nDeveloper's Name: Sahil Singh\n Contact Number: 9841674683\n github: https://github.com/XD-Coffin\n Mail: sahil_singh2003@gmail.com[/i][/b]: "
+            font_size: 15
+            color: "black"
+            pos_hint: {"center_x":0.4, "center_y":55/100}
+        
+WindowManager:
+    Window1:
+    Window2:
+    Window3:
+    Window4:
+
+<Window1>:
+    id: my_widget
+    name: "screen1"
+    FloatLayout:
+        Image:
+
+            source: "logo.PNG"
+            size_hint: (0.5, 0.5)
+            pos_hint: {"center_x":0.5, "center_y":0.8}
+
+        Label:
+
+            text: "Harsita Consultancy: "
+            font_size: 20
+            color: "red"
+            pos_hint: {"center_x":0.5, "center_y":0.6}
+
+        Button:
+            text: ""
+            size_hint: (5/100,5/100)
+            pos_hint: {"center_x":0.1, "center_y":85/100}
+            on_release: root.transition = FadeTransition();Factory.PopMe().open()
+            Image:
+                source: "menu.png"
+                size_hint: (0.5,0.5)
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+
+        Button:
+
+            text: " Create Format >>> "
+            background_color: "green"
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x":0.2,"center_y":45/100}
+            color: "white"
+            font_size: 15
+            on_release: app.root.current = "screen4"
+            # on_press = root.choose()
+
+        Button:
+
+            text: " Purchase Book >>> "
+            background_color: "green"
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x":0.2,"center_y":0.3}
+            color: "white"
+            font_size: 15
+            on_release: app.root.current = "screen2"
+
+        Button:
+
+            text: " Sales Book >>> "
+            background_color: "green"
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x":0.2,"center_y":15/100}
+            color: "white"
+            font_size: 15
+            on_release: app.root.current = "screen3"
+
+        Button:
+
+            text: " < EXIT > "
+            background_color: "red"
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x":0.8,"center_y":15/100}
+            color: "black"
+            font_size: 15
+            on_press: root.onClick()
+
+<Window2>:
+    pdate: pdate
+    pinvoice_no: pinvoice_no
+    psupplier_name: psupplier_name
+    psupplier_pan_no: psupplier_pan_no
+    pitem_name: pitem_name
+    pquantity: pquantity
+    ptotal_purchase: ptotal_purchase
+    pexempt_value: pexempt_value
+    ptaxable_purchase: ptaxable_purchase
+    ptaxable_import: ptaxable_import
+    pcapital_purchase: pcapital_purchase
+    pfilename: pfilename
+
+    name: "screen2"
+    FloatLayout:
+
+        Label:
+
+            text: "Purchase Book"
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.5, "center_y":0.9}
+
+        Label:
+            
+            text: "Date: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":0.8}
+
+        TextInput:
+            write_tab: False
+            id: pdate
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":0.8}
+            color: "black"
+        
+        Label:
+            
+            text: "Invoice No: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":73/100}
+        
+        TextInput:
+            write_tab: False
+            id: pinvoice_no
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":73/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Supplier's Name: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":66/100}
+        
+        TextInput:
+            write_tab: False
+            id: psupplier_name
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":66/100}
+            color: "black"
+
+        Label:
+            
+            text: "Supplier (PAN No): "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":59/100}
+
+        TextInput:
+            write_tab: False
+            id: psupplier_pan_no
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":59/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Item Name: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":52/100}
+
+        TextInput:
+            write_tab: False
+            id: pitem_name
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":52/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Quantity: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":45/100}
+
+        TextInput:
+            write_tab: False
+            id: pquantity
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":45/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Total Purchase: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":38/100}
+
+        TextInput:
+            write_tab: False
+            id: ptotal_purchase
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":38/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Exempt Value: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":31/100}
+
+        TextInput:
+            write_tab: False
+            id: pexempt_value
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":31/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Taxable Purchase: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":24/100}
+
+        TextInput:
+            write_tab: False
+            id: ptaxable_purchase
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":24/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Taxable Import: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":17/100}
+
+        TextInput:
+            write_tab: False
+            id: ptaxable_import
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":17/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Capital Purchase: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":10/100}
+        
+        TextInput:
+            write_tab: False
+            id: pcapital_purchase
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":10/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Filename: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":3/100}
+        
+        TextInput:
+            write_tab: False
+            id: pfilename
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":4/100}
+            color: "black"
+        
+        Button:
+
+            text: ""
+            size_hint: (0.1,0.1)
+            pos_hint: {"center_x":0.1, "center_y":0.9}
+            on_release: root.manager.transition.direction = "right";root.transition = FadeTransition();app.root.current = "screen1"
+            Image:
+                source: "back.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+        
+        Button:
+
+            text: " <<< Create Format >>> "
+            background_color: "green"
+            size_hint: (0.2, 0.1)
+            # 15/100
+            pos_hint: {"center_x":85/100,"center_y":0.8}
+            color: "white"
+            font_size: 15
+            on_press: root.onpress()
+        
+        Button:
+
+            text: " <<< ADD ENTRY >>> "
+            background_color: "green"
+            size_hint: (0.2, 0.1)
+            # 15/100
+            pos_hint: {"center_x":85/100,"center_y":0.2}
+            color: "white"
+            font_size: 15
+            on_press: root.add()
+
+<Window3>:
+    sdate: sdate
+    sinvoice_no: sinvoice_no
+    ssupplier_name: ssupplier_name
+    span_no: span_no
+    sitem_name: sitem_name
+    squantity: squantity
+    stotal_sales: stotal_sales
+    sexempt_sales: sexempt_sales
+    staxable_sales: staxable_sales
+    sfilename: sfilename
+
+    name: "screen3"
+    FloatLayout:
+
+        Label:
+
+            text: "Sales Book"
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.5, "center_y":0.9}
+
+        Label:
+            
+            text: "Date: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":0.8}
+
+        TextInput:
+            write_tab: False
+            id: sdate
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":0.8}
+            color: "black"
+        
+        Label:
+            
+            text: "Invoice No: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":73/100}
+        
+        TextInput:
+            write_tab: False
+            id: sinvoice_no
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":73/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Supplier's Name: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":66/100}
+        
+        TextInput:
+            write_tab: False
+            id: ssupplier_name
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":66/100}
+            color: "black"
+
+        Label:
+            
+            text: "PAN No: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":59/100}
+
+        TextInput:
+            write_tab: False
+            id: span_no
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":59/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Item Name: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":52/100}
+
+        TextInput:
+            write_tab: False
+            id: sitem_name
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":52/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Quantity: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":45/100}
+
+        TextInput:
+            write_tab: False
+            id: squantity
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":45/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Total Sales: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":38/100}
+
+        TextInput:
+            write_tab: False
+            id: stotal_sales
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":38/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Exempt Sales: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":31/100}
+
+        TextInput:
+            write_tab: False
+            id: sexempt_sales
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":31/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Taxable Sales: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":24/100}
+
+        TextInput:
+            write_tab: False
+            id: staxable_sales
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":24/100}
+            color: "black"
+        
+        Label:
+            
+            text: "Filename: "
+            font_size: 15
+            color: "white"
+            pos_hint: {"center_x":0.2, "center_y":3/100}
+        
+        TextInput:
+            write_tab: False
+            id: sfilename
+            multiline: False
+            size_hint: (0.4, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":4/100}
+            color: "black"
+        
+        Button:
+
+            text: ""
+            size_hint: (0.1,0.1)
+            pos_hint: {"center_x":0.1, "center_y":0.9}
+            on_release:root.manager.transition.direction = "right";root.transition = FadeTransition(); app.root.current = "screen1"
+            Image:
+                source: "back.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+        
+        Button:
+
+            text: " <<< Create Format >>> "
+            background_color: "green"
+            size_hint: (0.2, 0.1)
+            # 15/100
+            pos_hint: {"center_x":85/100,"center_y":0.8}
+            color: "white"
+            font_size: 15
+            on_press: root.manager.transition.direction = "left";root.onpress()
+        
+        Button:
+
+            text: " <<< ADD ENTRY >>> "
+            background_color: "green"
+            size_hint: (0.2, 0.1)
+            # 15/100
+            pos_hint: {"center_x":85/100,"center_y":0.2}
+            color: "white"
+            font_size: 15
+            on_press: root.add()
+
+<Window4>:
+    c_text: c_text
+    id: screen4
+    name: "screen4"
+    FloatLayout:
+        Label:
+            markup: True
+            text: "[i][b]Please enter the name you want\n To save the file as: [/b][/i]"
+            color: "white"
+            pos_hint: {"center_x":0.5, "center_y":0.7}
+            font_size: 25
+
+        TextInput:
+            id: c_text
+            multiline: False
+            write_tab: False
+            size_hint: (0.7, 5/100)
+            pos_hint: {"center_x":0.5, "center_y":0.6}
+            background_color: "grey"
+            color: "white"
+
+        Button:
+            text: ""
+            size_hint: (0.1,0.1)
+            pos_hint: {"center_x":0.1, "center_y":85/100}
+            on_release: root.transition = FadeTransition();root.manager.transition.direction = "right";app.root.current = "screen1"
+            Image:
+                source: "back.png"
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+            
+        
+        Button:
+            text: "Create >>"
+            size_hint: (0.2,0.1)
+            background_color: "green"
+            pos_hint: {"center_x":0.8,"center_y":0.4}
+            color: "white"
+            on_press: root.create()
+            # on_release: app.root.current = "screen1"
